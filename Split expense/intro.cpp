@@ -3,8 +3,8 @@ using namespace std;
 
 class User {
 public:
-    string userId, name, email, mobile;
-    User(string id, string n, string e, string m) : userId(id), name(n), email(e), mobile(m) {}
+    string userId, name;
+    User(string id, string n) : userId(id), name(n) {}
 };
 
 class ExpenseManager {
@@ -22,8 +22,8 @@ private:
     }
 
 public:
-    void addUser(string id, string name, string email, string mobile) {
-        users[id] = new User(id, name, email, mobile);
+    void addUser(string id, string name) {
+        users[id] = new User(id, name);
     }
     
     void processExpense(string payer, double amount, int numUsers, vector<string> participants, string type, vector<double> shares = {}) {
@@ -90,24 +90,36 @@ int main() {
     ExpenseManager manager;
     
     // Hardcoded users
-    manager.addUser("u1", "User1", "u1@example.com", "1234567890");
-    manager.addUser("u2", "User2", "u2@example.com", "1234567891");
-    manager.addUser("u3", "User3", "u3@example.com", "1234567892");
-    manager.addUser("u4", "User4", "u4@example.com", "1234567893");
+    manager.addUser("u1", "User1");
+    manager.addUser("u2", "User2");
+    manager.addUser("u3", "User3");
+    manager.addUser("u4", "User4");
     
     // Hardcoded expenses
+    cout<<"----------------------"<<endl;
     manager.showBalances();
     manager.showUserBalance("u1");
+    cout<<"----------------------"<<endl;
     
     manager.processExpense("u1", 1000, 4, {"u1", "u2", "u3", "u4"}, "EQUAL");
     manager.showBalances();
     manager.showUserBalance("u1");
+    cout<<"----------------------"<<endl;
     
     manager.processExpense("u1", 1250, 2, {"u2", "u3"}, "EXACT", {370, 880});
     manager.showBalances();
-    
+    cout<<"----------------------"<<endl;
+
     manager.processExpense("u4", 1200, 4, {"u1", "u2", "u3", "u4"}, "PERCENT", {40, 20, 20, 20});
+    cout<<"----------------------"<<endl;
     manager.showUserBalance("u1");
+    cout<<"----------------------"<<endl;
+    manager.showUserBalance("u2");
+    cout<<"----------------------"<<endl;
+    manager.showUserBalance("u3");
+    cout<<"----------------------"<<endl;
+    manager.showUserBalance("u4");
+    cout<<"----------------------"<<endl;
     manager.showBalances();
     
     return 0;
