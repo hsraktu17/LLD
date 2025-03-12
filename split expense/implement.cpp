@@ -2,7 +2,6 @@
 
 using namespace std;
 
-
 class User {
 public:
     string userId, name;
@@ -100,7 +99,6 @@ public:
         }
         if (!found) cout << "No balances" << endl;
     }
-
 };
 
 int main(){
@@ -110,7 +108,6 @@ int main(){
     manager.addUser("u2", "User2");
     manager.addUser("u3", "User3");
     manager.addUser("u4", "User4");
-
 
     manager.showBalances();
     manager.showUserBalance("u1");
@@ -124,8 +121,6 @@ int main(){
     
     manager.processExpense("u4", 1200, 4, {"u1", "u2", "u3", "u4"}, "PERCENT", {40, 20, 20, 20});
     manager.showUserBalance("u1");
-    
-
 
     return 0;
 }
