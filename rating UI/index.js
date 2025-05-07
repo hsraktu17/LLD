@@ -17,7 +17,7 @@ function renderStar(rating = 0) {
     star.addEventListener('mouseout', ()=> renderStar())
     star.addEventListener('click', () => {
       selectedRating = i
-      ratingText.innerHTML = `your rated ${starRating} star${starRating > 1 ? 's' : ''}`
+      ratingText.innerText = `your rated ${starRating} star${starRating > 1 ? 's' : ''}`
     })
 
     starContainer.appendChild(star)

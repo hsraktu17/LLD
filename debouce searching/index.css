@@ -1,0 +1,28 @@
+body {
+    font-family: sans-serif;
+    padding: 40px;
+    text-align: center;
+    background: #f0f0f0;
+  }
+  
+  input {
+    padding: 10px;
+    width: 250px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    background: white;
+    margin: 5px auto;
+    padding: 10px;
+    width: 260px;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  }
+  
