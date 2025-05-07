@@ -1,0 +1,24 @@
+body {
+    font-family: sans-serif;
+    padding: 50px;
+    text-align: center;
+    background: #f4f4f4;
+  }
+  
+  .stars {
+    display: inline-block;
+    font-size: 2.5rem;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .star {
+    color: #ccc;
+    margin: 0 5px;
+    transition: color 0.2s;
+  }
+  
+  .star.filled {
+    color: gold;
+  }
+  
