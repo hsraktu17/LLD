@@ -104,7 +104,7 @@ func (em *ExpenseManager) ProcessExpense(payer string, amount float64, numUsers 
 		if !feq(sum, amount) {
 			fmt.Println("Error: Exact amount do not sum up to total expense!")
 		}
-		copy(amounts, shares)
+		amounts = shares
 
 	case "PERCENT":
 		if len(shares) != numUsers {
@@ -182,8 +182,8 @@ func main() {
 	m.ShowBalance()
 	m.ShowBalanceUser("u1")
 
-	m.ProcessExpense("u1", 1000, 4, []string{"u1", "u2", "u3", "u4"}, "EXACT", []float64{100, 400, 300, 200})
+	m.ProcessExpense("u1", 100, 4, []string{"u1", "u2", "u3", "u4"}, "EXACT", []float64{1, 1, 53, 45})
 	m.ShowBalance()
-	m.ShowBalanceUser("u1")
+	m.ShowBalanceUser("u3")
 
 }
