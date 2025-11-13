@@ -250,7 +250,7 @@ func (w *Wallet) PrintAllTransactions() {
 
 	fmt.Println("\n========= GLOBAL LEDGER =========")
 	for _, e := range all {
-		fmt.Printf("TxnID: %d | %s | %s\n", e.ID, e.At.Format(time.RFC3339), e.Description)
+		fmt.Printf("TxnID: %d | %s | %s\n", e.ID, time.Now(), e.Description)
 		for _, p := range e.Postings {
 			sign := " "
 			if p.Amount > 0 {
